@@ -2,35 +2,39 @@ import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
   formContext: {
+    width: "100%",
     paddingTop: 30,
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#00FA9A",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     alignItems: "center",
   },
   form: {
+    paddingTop: 30,
     width: "100%",
+    backgroundColor: "#00FF7F",
   },
   formLabel: {
+    paddingTop: 15,
     color: "#000000",
     fontSize: 18,
-    paddingLeft: 20,
   },
   input: {
-    width: "90%",
+    width: "80%",
     borderRadius: 50,
     backgroundColor: "#f6f6f6",
     height: 40,
     margin: 12,
     paddingLeft: 10,
   },
-  buttonCalculator: {
+  buttonLogin: {
     borderRadius: 50,
     alignItems: "center",
     justifyContent: "center",
-    width: "90%",
-    backgroundColor: "#ff0043",
+    width: "80%",
+    backgroundColor: "#00BFFF",
+    color: "#ffffff",
     paddingTop: 14,
     paddingBottom: 14,
     marginLeft: 12,

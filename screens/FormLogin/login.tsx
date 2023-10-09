@@ -13,15 +13,17 @@ const FormLogin: React.FC = () => {
     try {
       const response = await auth.signIn()
       if (
-        response.user.email === email_input &&
-        response.user.password === password_input
+        response.user.email !== email_input &&
+        response.user.password !== password_input
       ) {
-        signIn()
+        
+       alert("Email ou senha incorretos")
+       
       } if(email_input==='' && password_input === ''){
-        setErrorMessage("Campos obrigatórios!")
+        setErrorMessage("Preencha os campos!")
       }
       else {
-        alert("Email ou senha incorretos")
+         signIn()
       }
     } catch (error) {
       alert("Ocorreu um erro durante o login.")
@@ -29,7 +31,7 @@ const FormLogin: React.FC = () => {
   }
 
   return (
-    <View style={styles.form}>
+    <View style={styles.formContext}>
       <Text style={styles.formLabel}>Email</Text>
 
       <Text style={styles.errorMessage}>{errorMessage}</Text>
@@ -37,6 +39,7 @@ const FormLogin: React.FC = () => {
         style={styles.input}
         placeholder="example@email.com"
         value={email_input}
+        onChangeText={(text) => setEmailInput(text)}
       />
 
       <Text style={styles.formLabel}>Senha</Text>
@@ -47,11 +50,13 @@ const FormLogin: React.FC = () => {
         placeholder="Sua senha aqui"
         secureTextEntry
         value={password_input}
+        onChangeText={(text) => setPasswordInput(text)}
       />
 
-      <TouchableOpacity style={styles.buttonCalculator} onPress={handleSignIn}>
+      <TouchableOpacity style={styles.buttonLogin} onPress={handleSignIn}>
         <Text>Entrar</Text>
       </TouchableOpacity>
+      <Text style={styles.rodape}>Criar conta</Text>
     </View>
   )
 }
