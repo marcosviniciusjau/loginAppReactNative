@@ -1,5 +1,5 @@
 # loginAppReactNative
-# Esse é um aplicativo em react native de um login:
+Esse é um aplicativo em react native de um login:
 # Esse é um vídeo demonstrativo:
 
 
