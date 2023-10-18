@@ -12,7 +12,10 @@ const {user, signOut}= useAuth()
 
   return (
     <View style={styles.formContext}>
-      <Text>Bem vindo {user?.name}!</Text>
+      <Text>Perfil:</Text>
+      <Text style={styles.formLabel}> {user?.name}!</Text>
+      <Text style={styles.formLabel}>{user?.email}!</Text>
+
       <TouchableOpacity style={styles.buttonLogin} onPress={handleSignOut}>
         <Text>Logout</Text>
       </TouchableOpacity>

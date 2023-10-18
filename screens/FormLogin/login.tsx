@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, TextInput, TouchableOpacity } from "react-native"
+import { View, Text, TextInput, TouchableOpacity, Button } from "react-native"
 import styles from "./style"
 import { useAuth } from "../../contexts/auth"
 import * as auth from "../../services/auth"
@@ -9,6 +9,7 @@ const FormLogin: React.FC = () => {
   const [email_input, setEmailInput] = useState("")
   const [password_input, setPasswordInput] = useState("")
   const [errorMessage,setErrorMessage]= useState(null)
+
   async function handleSignIn() {
     try {
       const response = await auth.signIn()
@@ -16,7 +17,6 @@ const FormLogin: React.FC = () => {
         response.user.email !== email_input &&
         response.user.password !== password_input
       ) {
-        
        alert("Email ou senha incorretos")
        
       } if(email_input==='' && password_input === ''){
@@ -56,7 +56,6 @@ const FormLogin: React.FC = () => {
       <TouchableOpacity style={styles.buttonLogin} onPress={handleSignIn}>
         <Text>Entrar</Text>
       </TouchableOpacity>
-      <Text style={styles.rodape}>Criar conta</Text>
     </View>
   )
 }
